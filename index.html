@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小小的家</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .banner-container {
+            position: relative;
+            width: 150px;
+            height:75px;
+        }
+        .banner-container img {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .banner-container img.active {
+            opacity: 1;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="140" height="140"><img src="images/10.jpg" width="160px" height="160px"></td>
+            <td width="620">
+                <div class="banner-container">
+                    <img src="images/banner1.jpg" alt="横幅图片1" class="active">
+                    <img src="images/banner2.jpg" alt="横幅图片2">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30" bgcolor="#FF0000" style="color: white;">
+                <a href="web/jianjie.html">个人简介</a>
+                <a href="web/donghua.html">动画作品</a>
+                <a href="web/xiangce.html">我的相册</a>
+                <a href="web/xuexi.html">学习心得</a>
+                <a href="mailto:6548423@qq.com">写信给我</a>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#0067C3" height="600">
+            </td>
+            <td>
+                <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="50" style="text-align: center; font-family:楷体; color: blue; font-size: 55px;">谭海翔的小破站</td>
+                    </tr>
+                    <tr>
+                        <td height="200" style="text-align: center; font-family:楷体; font-size: 60px; color: blue;">有朋自远方来 不亦乐乎！</td>
+                    </tr>
+                    <tr>
+                        <td height="50" style="text-align: center; color: #FF0000; font-size: 25px;">欢迎参观</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="black" style="color: white;">
+                <span id="date"></span>
+                Copyright &copy; 2008 小小版权所有
+            </td>
+        </tr>
+    </table>
+    <script>
+        const images = document.querySelectorAll('.banner-container img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+            });
+            images[index].classList.add('active');
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000); 
+    </script>
+</body>
+
+</html>

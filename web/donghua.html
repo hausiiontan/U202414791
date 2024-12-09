@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动画作品1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 内部样式表，用于补充一些仅该页面需要的特定样式，优先级高于外部样式表，可根据需要添加其他样式 */
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <table>
+        <tr>
+            <td colspan="2" bgcolor="#0067C3" style="height: 50px;">
+                <nav>
+                    <a href="../index.html">首页</a>
+                    <a href="jianjie.html">个人简介</a>
+                    <a href="donghua.html">动画作品</a>
+                    <a href="xiangce.html">我的相册</a>
+                    <a href="xuexi.html">学习心得</a>
+                    <a href="mailto:6548423@qq.com">写信给我</a>
+                </nav>
+            </td>
+        </tr>
+        <!-- 主体内容 -->
+        <tr>
+            <td colspan="2">
+                <div class="animation-container">
+                    <div class="light-bg"></div> <!-- 使用新的div元素结合CSS动画模拟光线掠过效果 -->
+                    <img src="../images/00-07-45-942_512.gif" width="320" height="240" />
+                    <img src="../images/00-13-50-483_512.gif" width="320" height="240" />
+                    <img src="../images/06-31-28-535_512.gif" width="320" height="240" />
+                    <img src="../images/21-44-44-5_512.gif" width="320" height="240" />
+                    <img src="../images/14-33-03-117_512.gif" width="280" height="240" />
+                    <img src="../images/20-09-56-760_512.gif" width="320" height="240" />
+                </div>
+            </td>
+        </tr>
+        <!-- 底部版权和日期信息 -->
+        <tr>
+            <td colspan="2">
+                <footer>
+                    <span id="date"></span>
+                    Copyright &copy; 2008 小小版权所有
+                </footer>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // JavaScript代码用于获取当前日期并显示在页面上
+        var date = new Date();
+        document.getElementById('date').innerHTML = date.toLocaleDateString();
+
+        // 为导航栏链接添加点击事件，实现页面切换时的动画效果（这里简单示例淡入淡出切换页面，实际可能更复杂）
+        $(document).ready(function () {
+            $('nav a').click(function (e) {
+                e.preventDefault();
+                var href = $(this).attr('href');
+                $('body').fadeOut(300, function () {
+                    window.location.href = href;
+                });
+            });
+
+            // 以下是针对新的动画交互功能的完善，例如可以添加动画暂停/继续按钮等功能（示例代码，可根据实际需求拓展）
+
+            var animationPaused = false; // 初始状态为动画未暂停
+            // 创建一个暂停/播放按钮，并添加点击事件来控制动画状态
+            $('#play-pause-btn').click(function () {
+                var lightBg = $('.light-bg');
+                if (animationPaused) {
+                    lightBg.css('animation-play-state', 'running'); // 恢复动画播放
+                    $(this).text('暂停');
+                } else {
+                    lightBg.css('animation-play-state', 'paused'); // 暂停动画
+                    $(this).text('播放');
+                }
+                animationPaused =!animationPaused;
+            });
+
+            // 创建一个返回顶部按钮，并添加点击事件使其滚动到页面顶部
+            $('#back-to-top-btn').click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 当页面滚动时，显示或隐藏返回顶部按钮（例如滚动一定距离后显示）
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('#back-to-top-btn').fadeIn();
+                } else {
+                    $('#back-to-top-btn').fadeOut();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

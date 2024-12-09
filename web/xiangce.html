@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的相册</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="2" height="30" bgcolor="#FF0000" style="color: white;">
+                <a href="../index.html">首页</a>
+                <a href="jianjie.html">个人简介</a>
+                <a href="donghua.html">动画作品</a>
+                <a href="xiangce.html">我的相册</a>
+                <a href="xuexi.html">学习心得</a>
+                <a href="mailto:6548423@qq.com">写信给我</a>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#0067C3" height="600">
+            </td>
+            <td>
+                <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td><img src="../images/3.jpg" width="400" height="350"></td>
+                        <td><img src="../images/4.jpg" width="400" height="350"></td>
+                        <td><img src="../images/5.jpg" width="400" height="350"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/6.jpg" width="400" height="300"></td>
+                        <td><img src="../images/7.jpg" width="400" height="300"></td>
+                        <td><img src="../images/8.jpg" width="400" height="300"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/1.jpg" width="400" height="300"></td>
+                        <td><img src="../images/9.jpg" width="400" height="300"></td>
+                        <td><img src="../images/2.jpg" width="200" height="300"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-container">
+                                <p class="text-content">遇见多彩生活。</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr colspan="2" bgcolor="black" style="color: white;">
+            <span id="date"></span>
+            Copyright &copy; 2008 小小版权所有
+        </tr>
+    </table>
+    <script>
+        var date = new Date();
+        document.getElementById('date').innerHTML = date.toLocaleDateString();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学习心得</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+       .content {
+            padding: 20px;
+            text-align: left;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0067C3;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="2" bgcolor="#0067C3" style="height: 50px;">
+                <nav>
+                    <a href="../index.html">首页</a>
+                    <a href="jianjie.html">个人简介</a>
+                    <a href="donghua.html">动画作品</a>
+                    <a href="xiangce.html">我的相册</a>
+                    <a href="xuexi.html">学习心得</a>
+                    <a href="mailto:6548423@qq.com">写信给我</a>
+                </nav>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="content">
+                    <h2>我的编程学习心得</h2>
+                    <p>在学习编程的这段时间里，我收获颇丰，也有许多深刻的体会。</p>
+                    <p>起初，面对那些复杂的代码和陌生的语法规则，我感到十分困惑和迷茫。例如，当我第一次接触 HTML 时，那些繁多的标签和属性让我摸不着头脑，不知道该如何正确地构建一个网页页面。但是，通过不断地查阅资料、参考网上的教程以及自己动手实践，我逐渐理解了每个标签的作用以及它们之间是如何相互配合来呈现出丰富多彩的网页内容的。</p>
+                    <p>学习 CSS 样式表的过程也充满了挑战。如何精准地控制页面元素的布局、颜色、字体等外观属性，需要花费大量的时间去尝试不同的属性值组合以及掌握各种选择器的使用方法。不过，当我看到自己精心设计的样式成功应用到页面上，让原本单调的网页变得美观大方时，那种成就感是无法言喻的。</p>
+                    <p>JavaScript 的学习更是让我体会到了编程的强大和趣味性。它赋予了网页交互性，能够实现各种动态效果，比如点击按钮显示隐藏内容、实现页面的平滑滚动等。但同时，JavaScript 的逻辑复杂性也要求我更加严谨地思考和编写代码，处理好各种变量、函数以及事件监听的关系。</p>
+                    <p>总的来说，学习编程是一个需要耐心、毅力和持续探索精神的过程。每一次攻克一个难题，每一次看到自己的代码成功运行，都激励着我不断前进，去探索更多编程世界的奥秘。</p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <footer>
+                    <span id="date"></span>
+                    Copyright &copy; 2008 小小版权所有
+                </footer>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var date = new Date();
+        document.getElementById('date').innerHTML = date.toLocaleDateString();
+
+        $(document).ready(function () {
+            $('nav a').click(function (e) {
+                e.preventDefault();
+                var href = $(this).attr('href');
+                $('body').fadeOut(300, function () {
+                    window.location.href = href;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

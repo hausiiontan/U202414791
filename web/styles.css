@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none; 
+    color: #007bff; 
+    transition: color 0.3s ease; 
+}
+
+a:hover {
+    text-decoration: none; 
+    color: #0056b3; 
+}
+
+table {
+    border-collapse: collapse; 
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; 
+}
+
+.image-container {
+    width: 100%;
+    max-width: 600px; 
+    margin: 20px auto; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; 
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.image-container img:hover {
+    transform: scale(1.1); 
+}
+
+nav {
+    background-color: #0067C3;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 15px;
+    color: #333; 
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+@keyframes banner-animation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.banner-container {
+    width: 620px;
+    height: 140px;
+    position: relative; 
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner-image.active {
+    opacity: 1;
+}
+
+@keyframes text-fade-animation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.text-container {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto; 
+    overflow: hidden; 
+}
+
+.text-content {
+    font-size: 16px; 
+    color: #333; 
+    animation: text-fade-animation 3s infinite;
+    text-align: center; 
+    line-height: 50px; 
+}
